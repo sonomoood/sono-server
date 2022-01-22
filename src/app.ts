@@ -7,14 +7,13 @@ import express, {Request, Response, Router} from 'express';
 // import helmet from 'helmet';
 // import hpp from 'hpp';
 // import morgan from 'morgan';
-// import { connect, set } from 'mongoose';
+import { connect, set } from 'mongoose';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-// import { dbConnection } from '@databases';
+import { dbConnection } from '@databases';
 import { Routes } from '@interfaces/routes.interface';
 // import errorMiddleware from '@middlewares/error.middleware';
 import { logger, stream } from './utils/logger';
-import HealthCheckRoute from './routes/healthcheck.route';
 
 class App {
   public app: express.Application;
@@ -27,7 +26,7 @@ class App {
     this.port = process.env.PORT || 3000;
     this.env = process.env.NODE_ENV || 'development';
 
-    // this.connectToDatabase();
+    this.connectToDatabase();
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
     this.initializeSwagger();
@@ -49,13 +48,13 @@ class App {
     return this.app;
   }
 
-  // private connectToDatabase() {
-  //   if (this.env !== 'production') {
-  //     set('debug', true);
-  //   }
+  private connectToDatabase() {
+    if (this.env !== 'production') {
+      set('debug', true);
+    }
 
-  //   connect(dbConnection.url, dbConnection.options);
-  // }
+    connect(dbConnection.url);
+  }
 
   private initializeMiddlewares() {
     // this.app.use(morgan(config.get('log.format'), { stream }));

@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mvertes/alpine-mongo
+    container_name: mongo
+    ports:
+      - '27017:27017'
