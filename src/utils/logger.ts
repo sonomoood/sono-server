@@ -4,10 +4,7 @@ import { join } from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
 
-// logs dir
-// const logDir: string = join(__dirname, config.get('log.dir'));
-// const logDir: string = join(__dirname, config.get('log.dir'));
-const logDir: string = "C:/Users/SefT8/projects/cours/M2/learn-projet/logs";
+const logDir: string = "logs";
 
 if (!existsSync(logDir)) {
   mkdirSync(logDir);

@@ -12,8 +12,6 @@ class HealthCheckRoute implements Routes{
   }
 
   private initializeRoutes() {
-    console.log("hey");
-    
     this.router.get("/healthcheck", this.healthController.healthCheck);
     // this.router.post(`${this.path}signup`, validationMiddleware(CreateUserDto, 'body'), this.authController.signUp);
   }
