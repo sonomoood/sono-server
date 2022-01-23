@@ -1,6 +1,6 @@
 #Sonomood
 .vscode
-
+.idea
 # Logs
 logs
 *.log
