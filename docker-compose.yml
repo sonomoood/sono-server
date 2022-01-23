@@ -15,6 +15,6 @@ services:
 
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile_Back
     ports:
       - "3000:3000"
