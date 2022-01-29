@@ -6,3 +6,17 @@ services:
     container_name: mongo
     ports:
       - '27017:27017'
+
+  backend:
+    image: app-backend
+    container_name: back
+    depends_on:
+      - mongo
+
+    build:
+      context: .
+      dockerfile: Dockerfile_Back
+    ports:
+      - "3000:3000"
+    links:
+      - "mongo:mongoDBHost"
