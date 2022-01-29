@@ -8,12 +8,15 @@ import express, {Request, Response, Router} from 'express';
 // import hpp from 'hpp';
 // import morgan from 'morgan';
 import { connect, set } from 'mongoose';
-import swaggerJSDoc from 'swagger-jsdoc';
-import swaggerUi from 'swagger-ui-express';
+/*import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';*/
 import { dbConnection } from '@databases';
 import { Routes } from '@interfaces/routes.interface';
 // import errorMiddleware from '@middlewares/error.middleware';
 import { logger, stream } from './utils/logger';
+
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('../swagger.json');
 
 class App {
   public app: express.Application;
@@ -85,8 +88,13 @@ class App {
       apis: ['swagger.yaml'],
     };
 
-    const specs = swaggerJSDoc(options);
-    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+/*    const specs = swaggerJSDoc(options);
+    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));*/
+    this.app.use(
+        '/api-docs',
+        swaggerUi.serve,
+        swaggerUi.setup(swaggerDocument)
+    );
   }
 
   // private initializeErrorHandling() {
