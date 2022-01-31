@@ -1,0 +1,9 @@
+install ts-node
+https://www.geeksforgeeks.org/how-to-execute-typescript-file-using-command-line/
+
+
+sudo npm install -g tslib @types/node
+sudo npm install -g typescript
+sudo npm install -g ts-node
+sudo npm install -g --save-dev @types/node
+
