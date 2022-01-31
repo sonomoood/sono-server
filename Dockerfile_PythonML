@@ -1,0 +1,10 @@
+FROM frolvlad/alpine-python-machinelearning
+
+ENV APP_DIR=/app/ml
+
+WORKDIR $APP_DIR
+
+ADD ml/test.py $APP_DIR
+
+ENTRYPOINT sleep 600
+
