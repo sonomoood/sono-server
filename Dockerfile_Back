@@ -7,7 +7,7 @@ WORKDIR $APP_DIR
 RUN mkdir src
 
 ADD src $APP_DIR/src
-ADD package.json tsconfig.json yarn.lock $APP_DIR
+ADD swagger.json package.json tsconfig.json yarn.lock $APP_DIR
 RUN npm install
 RUN yarn install
 
