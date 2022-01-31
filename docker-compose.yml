@@ -12,11 +12,20 @@ services:
     container_name: back
     depends_on:
       - mongo
-
     build:
       context: .
       dockerfile: Dockerfile_Back
     ports:
       - "3000:3000"
     links:
-      - "mongo:mongoDBHost"
+      - "mongo:mongodbhost"
+
+  PythonML:
+    image: python-machinelearning
+    container_name: pythonMl
+    build:
+      context: .
+      dockerfile: Dockerfile_PythonML
+
+
+
