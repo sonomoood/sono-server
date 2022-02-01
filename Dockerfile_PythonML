@@ -4,7 +4,9 @@ ENV APP_DIR=/app/ml
 
 WORKDIR $APP_DIR
 
-ADD ml/test.py $APP_DIR
+ADD ml/songs.py ml/classified_dataset.csv $APP_DIR
 
-ENTRYPOINT sleep 600
+#ENTRYPOINT sleep 6000
+ENTRYPOINT python3 songs.py
+
 

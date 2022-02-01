@@ -1,9 +1,5 @@
+
 import fs, { readFileSync } from 'fs';
-
-import readline from 'readline';
-
-
-//OR
 
 const knownThemes = [
     "Pain", "confidence", "Fear",
@@ -86,9 +82,9 @@ class Dico {
 // parse CSV:
 
 
-const words_csv_file = 'words_updated.csv';
-const lyrics_csv_file = 'lyrics-dataV2.csv';
-const classified_csv_file = 'Dataset_Classified.csv';
+const words_csv_file = 'words_occurence.csv';
+const lyrics_csv_file = 'lyrics-data.csv';
+const classified_csv_file = 'dataset_classified.csv';
 
 // charge dico
 const dico = loadDico();

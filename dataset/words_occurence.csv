@@ -72,7 +72,7 @@ ever;34914;
 better;34899;happiness
 always;34700;serenity
 long;34385;
-home;33407;heaven
+home;33407;happiness serenity confidence
 find;33360;
 shit;32846;pain
 tonight;31719;serenity
@@ -166,7 +166,7 @@ forever;16265;serenity
 someone;16091;confusion
 game;15936;pain
 true;15882;
-song;15840;condidence
+song;15840;confidence
 told;15805;
 nobody;15791;pain
 wish;15655;
@@ -554,7 +554,7 @@ tear;4406;
 shawty;4392;love
 shut;4374;
 read;4370;
-loves;4358;happines love
+loves;4358;happiness love
 belong;4356;passion
 looks;4354;
 sexy;4352;passion love
@@ -767,7 +767,7 @@ sunshine;2805;happiness love hope
 realize;2803;
 died;2802;pain
 edge;2802;
-lucky;2797;hapiness
+lucky;2797;happiness
 instead;2791;
 human;2785;serenity hope
 homie;2779;
@@ -800,7 +800,7 @@ twice;2696;
 anywhere;2690;confidence love
 dawn;2683;
 tongue;2683;
-wife;2679;hapiness
+wife;2679;happiness
 clap;2677;
 awake;2671;
 haven;2666;
@@ -813,7 +813,7 @@ rules;2643;
 guns;2642;
 shorty;2638;love
 trip;2635;hope
-boss;2634;confident
+boss;2634;confidence
 price;2632;confusion
 dogg;2631;
 starts;2630;hope
@@ -845,7 +845,7 @@ wherever;2534;
 evil;2533;sadness pain
 sweat;2532;happiness love hope
 dust;2530;
-chest;2529;mad pain
+chest;2529;madness pain
 least;2529;
 pieces;2527;
 lovers;2525;happiness love hope
@@ -986,7 +986,7 @@ john;2081;
 acting;2076;
 faster;2075;passion
 rhyme;2075;passion happiness
-beating;2069;hapiness love
+beating;2069;happiness love
 sunday;2069;
 book;2065;
 plus;2064;
@@ -1094,7 +1094,7 @@ remind;1798;
 bells;1795;
 california;1795;serenity
 dough;1795;
-crash;1793;mad pain
+crash;1793;madness pain
 surprise;1793;
 test;1793;
 older;1791;confidence
@@ -1120,7 +1120,7 @@ fantasy;1758;serenity love hope
 dancin;1756;
 knife;1755;anger
 deeper;1751;
-breaks;1749;sadnesse
+breaks;1749;sadness
 distance;1744;
 others;1744;
 building;1743;serenity hope
@@ -1145,11 +1145,11 @@ starting;1720;
 beginning;1717;hope
 heads;1716;
 chris;1715;
-happiness;1714;hapiness
+happiness;1714;happiness
 bread;1710;
 grave;1710;sadness
 flowers;1708;
-heal;1708;condidence
+heal;1708;confidence
 poison;1705;pain fear
 weekend;1705;
 teeth;1703;
@@ -1209,7 +1209,7 @@ roof;1613;
 store;1613;
 decide;1612;confidence
 foot;1611;
-burned;1610;mad pain
+burned;1610;madness pain
 difference;1610;confusion
 letter;1610;
 soldier;1610;
@@ -1339,13 +1339,13 @@ grass;1387;
 church;1386;
 thick;1386;
 boyfriend;1385;
-ugly;1384;pain anger mad
+ugly;1384;pain anger madness
 windows;1382;
 page;1381;
 motion;1380;
 thru;1380;
 wearing;1379;
-bitter;1378;pain anger mad
+bitter;1378;pain anger madness
 album;1376;
 blast;1375;
 swim;1375;confusion
@@ -1529,17 +1529,17 @@ slave;1183;
 order;1182;confidence
 drip;1178;
 blessed;1177;serenity
-killin;1176;mad
+killin;1176;madness
 truly;1174;hope love
 walks;1174;
 chances;1172;hope love
-purple;1171;hopeserenity
+purple;1171;hope serenity
 lesson;1170;
 sink;1170;pain sadness
 moments;1169;
 putting;1169;
-madness;1168;sadness mad pain
-enemies;1167;mad anger pain
+madness;1168;sadness madness pain
+enemies;1167;madness anger pain
 planet;1166;
 wicked;1166;
 bars;1165;
@@ -1568,7 +1568,7 @@ onto;1146;
 tide;1146;
 buried;1145;
 forward;1145;
-curse;1143;mad anger pain
+curse;1143;madness anger pain
 pink;1143;
 camera;1141;
 attitude;1140;
@@ -1619,7 +1619,7 @@ spring;1097;
 hurting;1094;sadness pain
 hills;1092;
 although;1091;
-demons;1090;mad anger sadness fear
+demons;1090;madness anger sadness fear
 playa;1089;
 pockets;1089;
 press;1089;
@@ -1703,7 +1703,7 @@ disease;1019;
 cock;1018;
 knocking;1018;
 willing;1018;confidence
-winner;1017;hapiness
+winner;1017;happiness
 frozen;1016;pain fear
 toast;1015;
 grows;1014;confidence

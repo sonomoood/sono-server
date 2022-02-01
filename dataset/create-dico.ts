@@ -1,5 +1,8 @@
+
 import fs from 'fs';
+
 import readline from 'readline';
+
 
 //OR
 
@@ -52,9 +55,7 @@ class RowItem {
 
 let allWords: any = {};
 const rl = readline.createInterface({
-    // input: fs.createReadStream('../../lyrics-data.csv'),
-    input: fs.createReadStream('lyrics-dataV2.csv'),
-    //input: fs.createReadStream('C:/homeware/workspace/Master/Master2/S2/Projet_M2/dataSet/lyrics-data.csv'),
+    input: fs.createReadStream('../../lyrics-data.csv'),
     output: process.stdout,
     terminal: false
 });
@@ -64,10 +65,10 @@ rl.on('line', (line: string) => {
     if (!isValidIdiom(line)) return;
     let row = RowItem.parse(line);
     feedAllWords(row);
-    printRow(row);
+    //printRow(row);
 
    // rl.close();
-
+    
 }).on('close', () => {
     filterWords();
 
@@ -85,7 +86,7 @@ function feedAllWords(row: RowItem) {
 
 function filterWords() {
     allWords = Object.keys(allWords)
-        .filter(k => allWords[k] >= 1) // keep words with at least 100 occurences
+        .filter(k => allWords[k] >= 1000) // keep words with at least 100 occurences
         .filter(k => k.length >= 4) // keep words with at least 4 letters length
         .sort() // sort words by alphabetical order
         .reduce((obj: any, key) => { obj[key] = allWords[key]; return obj; }, {});
@@ -95,7 +96,7 @@ function printRow(row: RowItem) {
     console.log("===> LINE::: ", row.title, "|", row.idiom, '|', row.link
         , '\n'
         , row.lyric.replace(/\.+/g, '.\n')
-      //  , '\nWORDS: ', row.words()
+        , '\nWORDS: ', row.words()
         ,'\n---------');
 
 }
@@ -111,7 +112,6 @@ function printAllWords() {
 
 function isValidIdiom(line: string) {
     return  line.substring(line.lastIndexOf(',') + 1).toUpperCase() === 'ENGLISH';
-
 }
 
 
