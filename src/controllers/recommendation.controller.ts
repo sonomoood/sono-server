@@ -7,6 +7,23 @@ import { StatusCodes } from 'http-status-codes';
 
 export default class RecommendationController{
 
+
+    /**
+     * @openapi
+     * /recommendation/from-twitter:
+     *   get:
+     *     description: Recommend music from a user tweet's
+     *     parameters:
+     *       - name: twitter_username
+     *         in: query
+     *         required: true
+     *         type: string
+     *     responses:
+     *       200:
+     *         description: Returns 10 latest tweets.
+     *       400:
+     *         description: Error with the username
+     */
     public fromTwitter = async (req: Request, res: Response) => {
         if(!req.query.twitter_username){
             return res.status(StatusCodes.BAD_REQUEST)
@@ -21,7 +38,9 @@ export default class RecommendationController{
         var twitterUsername = req.query.twitter_username.toString();
         var userResponse = await roClient.v2.userByUsername(twitterUsername);
         if(userResponse.errors){
-            return res.status(400).send(userResponse.errors[0].detail);
+            return res
+            .status(StatusCodes.BAD_REQUEST)
+            .send(userResponse.errors[0].detail);
         }
         var userId = userResponse.data.id;
 
