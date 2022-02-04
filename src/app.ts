@@ -26,7 +26,7 @@ class App {
     this.port = process.env.PORT || 3000;
     this.env = process.env.NODE_ENV || 'development';
 
-    this.connectToDatabase();
+    // this.connectToDatabase();
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
     this.initializeSwagger();
@@ -77,12 +77,12 @@ class App {
     const options = {
       swaggerDefinition: {
         info: {
-          title: 'REST API',
+          title: 'Sonomood backend REST API docs',
           version: '1.0.0',
-          description: 'Example docs',
+          description: '',
         },
       },
-      apis: ['swagger.yaml'],
+      apis: ['./src/controllers/*controller.ts'],
     };
 
     const specs = swaggerJSDoc(options);

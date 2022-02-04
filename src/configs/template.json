@@ -5,10 +5,12 @@
         "database": "sonomood",
         "port": 27017
     },
-    "secretKey": "secretKey",
     "log": {
         "format": "dev",
         "dir": "../../logs"
+    },
+    "twitter": {
+        "bearer_token": "YOUR_BEARER_TOKEN"
     },
     "cors": {
         "origin": true,
