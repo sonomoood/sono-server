@@ -46,8 +46,8 @@ export default class RecommendationController{
 
         // Get user 10 latest tweet
         var userTimeline = await roClient.v2.userTimeline(userId);
-        var latestTweets :String[] = new Array();
-        userTimeline.data.data.forEach(tweet => latestTweets.push(tweet.text));
+        var latestTweets : String = new String();
+        userTimeline.data.data.forEach(tweet => latestTweets += " " + tweet.text);
 
         return res.send(latestTweets).status(StatusCodes.ACCEPTED);
     }
