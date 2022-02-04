@@ -19,8 +19,10 @@ yarn test
 ```
 
 ### Test UI (Endpoints)
-[http://localhost:3000/FeedSongMood](http://localhost:3000/healthcheck)
+[http://localhost:3000/FeedSongMood](http://localhost:3000/healthcheck)  
+
 [http://localhost:3000/GetMoodFromTweets](http://localhost:3000/healthcheck)  
+
 
 
 ### API docs
