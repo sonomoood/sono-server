@@ -10,10 +10,10 @@ import express, {Request, Response, Router} from 'express';
 import { connect, set } from 'mongoose';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import { dbConnection } from '@databases';
+import { dbConnection } from '@infrastructure/databases';
 import { Routes } from '@interfaces/routes.interface';
 // import errorMiddleware from '@middlewares/error.middleware';
-import { logger, stream } from './utils/logger';
+import { logger, stream } from '../utils/logger';
 
 class App {
   public app: express.Application;
@@ -22,7 +22,6 @@ class App {
 
   constructor(routes: Routes[]) {
     this.app = express();
-    this.app.get
     this.port = process.env.PORT || 3000;
     this.env = process.env.NODE_ENV || 'development';
 

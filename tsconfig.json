@@ -31,7 +31,12 @@
     "paths": {
       "@/*": ["*"],
       "@controllers/*": ["controllers/*"],
-      "@databases": ["databases"],
+      "@domain/*": ["domain/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@presentation/*": ["presentation/*"],
+      "@healthcheck/*": ["presentation/healthcheck/*"],
+      "@recommendation/*": ["presentation/recommendation/*"],
+      "@databases": ["/databases"],
       "@interfaces/*": ["interfaces/*"],
       "@routes/*": ["routes/*"],
       "@utils/*": ["utils/*"]
