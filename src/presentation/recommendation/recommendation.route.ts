@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { Routes } from "@interfaces/routes.interface";
-import RecommendationController from '@/controllers/recommendation.controller';
+import RecommendationController from '@recommendation/recommendation.controller';
 
 export default class RecommendationRoute implements Routes{
   public path = '/recommendation';
