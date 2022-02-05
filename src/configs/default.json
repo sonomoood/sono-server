@@ -1,5 +1,4 @@
 {
-    "env": "development",
     "dbConfig": {
         "host": "localhost",
         "database": "sonomood",
@@ -9,11 +8,15 @@
         "format": "dev",
         "dir": "../../logs"
     },
-    "twitter": {
-        "bearer_token": "YOUR_BEARER_TOKEN"
-    },
     "cors": {
         "origin": true,
         "credentials": true
+    },
+    "twitter": {
+        "bearerToken": "SECRET : add it in local.json not in default.json or other filed tracked with Git"
+    },
+    "mlService": {
+        "baseUrl": "http://localhost:3001",
+        "fromTwitterUrl": "/from-twitter"
     }
 }

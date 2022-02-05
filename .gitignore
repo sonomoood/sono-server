@@ -1,6 +1,6 @@
 #Sonomood
 .vscode
-src/configs/development.json
+src/configs/local*
 
 # Logs
 logs
