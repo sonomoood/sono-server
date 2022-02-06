@@ -62,7 +62,7 @@ export default class RecommendationController{
             userTimeline.data.data.forEach(tweet => latestTweets += " " + tweet.text);
         }
         
-        var mood = await this.mlService.fromTwitter(latestTweets);
+        var mood = await this.mlService.classifyFromText(latestTweets);
 
         logger.info("Tweets are :\n" + latestTweets + "\n----\nMood is : " + mood);
 

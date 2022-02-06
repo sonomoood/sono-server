@@ -13,8 +13,8 @@ export default class MlService {
         })
     }
 
-    async fromTwitter(tweets: string) : Promise<any>{
-        var response = await this.mlClient.post(this.mlConfig.fromTwitterUrl, tweets);
+    async classifyFromText(text: string) : Promise<any>{
+        var response = await this.mlClient.post(this.mlConfig.classifyTextUrl, text);
         return response.data;
     }
 }

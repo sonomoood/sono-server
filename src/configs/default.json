@@ -17,6 +17,6 @@
     },
     "mlService": {
         "baseUrl": "http://localhost:3001",
-        "fromTwitterUrl": "/from-twitter"
+        "classifyTextUrl": "classify-text"
     }
 }
