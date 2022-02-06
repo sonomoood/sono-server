@@ -7,7 +7,7 @@ A) To run ML Python service:
 
 Use the specific docker compose file using this command
 ```bash
-$ docker-compose -f docker-compose-ML.yml up --build --force-recreate -d
+$ docker-compose -f docker-compose.yml up --build --force-recreate -d
 ```
 
 B) To list running Docker images use:
