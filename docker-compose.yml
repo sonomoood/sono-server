@@ -20,12 +20,12 @@ services:
     links:
       - "mongo:mongodbhost"
 
-#  PythonML:
-#    image: python-machinelearning
-#    container_name: pythonMl
-#    build:
-#      context: .
-#      dockerfile: Dockerfile_PythonML
+  PythonML:
+    image: python-machinelearning
+    container_name: pythonMl
+    build:
+      context: .
+      dockerfile: Dockerfile_PythonML
 
 
 
