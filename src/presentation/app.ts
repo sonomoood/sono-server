@@ -8,15 +8,12 @@ import express, {Request, Response, Router} from 'express';
 // import hpp from 'hpp';
 // import morgan from 'morgan';
 import { connect, set } from 'mongoose';
-/*import swaggerJSDoc from 'swagger-jsdoc';
-import swaggerUi from 'swagger-ui-express';*/
-import { dbConnection } from '@databases';
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
+import { dbConnection } from '@infrastructure/databases';
 import { Routes } from '@interfaces/routes.interface';
 // import errorMiddleware from '@middlewares/error.middleware';
-import { logger, stream } from './utils/logger';
-
-const swaggerUi = require('swagger-ui-express'),
-swaggerDocument = require('../swagger.json');
+import { logger, stream } from '../utils/logger';
 
 class App {
   public app: express.Application;
@@ -25,11 +22,10 @@ class App {
 
   constructor(routes: Routes[]) {
     this.app = express();
-    this.app.get
     this.port = process.env.PORT || 3000;
     this.env = process.env.NODE_ENV || 'development';
 
-    this.connectToDatabase();
+    // this.connectToDatabase();
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
     this.initializeSwagger();
@@ -80,21 +76,16 @@ class App {
     const options = {
       swaggerDefinition: {
         info: {
-          title: 'REST API',
+          title: 'Sonomood backend REST API docs',
           version: '1.0.0',
-          description: 'Example docs',
+          description: '',
         },
       },
-      apis: ['swagger.yaml'],
+      apis: ['./src/controllers/*controller.ts'],
     };
 
-/*    const specs = swaggerJSDoc(options);
-    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));*/
-    this.app.use(
-        '/api-docs',
-        swaggerUi.serve,
-        swaggerUi.setup(swaggerDocument)
-    );
+    const specs = swaggerJSDoc(options);
+    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
   }
 
   // private initializeErrorHandling() {

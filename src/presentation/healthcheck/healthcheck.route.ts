@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { Routes } from "@interfaces/routes.interface";
-import HealthcheckController from '@controllers/healthcheck.controller';
+import HealthcheckController from '@healthcheck/healthcheck.controller';
 
 class HealthCheckRoute implements Routes{
   public path = '/';

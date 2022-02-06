@@ -1,0 +1,22 @@
+{
+    "dbConfig": {
+        "host": "localhost",
+        "database": "sonomood",
+        "port": 27017
+    },
+    "log": {
+        "format": "dev",
+        "dir": "../../logs"
+    },
+    "cors": {
+        "origin": true,
+        "credentials": true
+    },
+    "twitter": {
+        "bearerToken": "SECRET : add it in local.json not in default.json or other filed tracked with Git"
+    },
+    "mlService": {
+        "baseUrl": "http://localhost:3001",
+        "classifyTextUrl": "classify-text"
+    }
+}

@@ -1,6 +1,8 @@
 #Sonomood
 .vscode
 .idea
+src/configs/local*
+
 # Logs
 logs
 *.log
