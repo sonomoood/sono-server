@@ -4,9 +4,13 @@ ENV APP_DIR=/app/ml
 
 WORKDIR $APP_DIR
 
-ADD ml/songs.py ml/classified_dataset.csv $APP_DIR
+#ADD everything from ml to $APP_DIR
+ADD ml $APP_DIR
 
-#ENTRYPOINT sleep 6000
-ENTRYPOINT python3 songs.py
+EXPOSE 4000
+
+ENTRYPOINT python3 labelizer_server.py
+#ENTRYPOINT python3 test_dico.py
+
 
 
