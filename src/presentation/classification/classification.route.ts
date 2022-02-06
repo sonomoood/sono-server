@@ -12,6 +12,6 @@ export default class ClassificationRoute implements Routes{
   }
 
   private initializeRoutes() {
-      this.router.post(`${this.path}/from-lyrics`, this.classificationController.fromLyrics);
+      this.router.get(`${this.path}/from-lyrics`, this.classificationController.fromLyrics);
   }
 }
