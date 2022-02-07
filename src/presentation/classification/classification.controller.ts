@@ -5,8 +5,6 @@ import { StatusCodes } from 'http-status-codes';
 import MlService from '@/infrastructure/ml/mlService';
 import MlConfig from '@/infrastructure/ml/mlConfig';
 import Music from '@/domain/music/music';
-import { musicModel } from '@/infrastructure/databases/music/music';
-
 
 export default class ClassificationController{
 
@@ -32,10 +30,8 @@ export default class ClassificationController{
      *         description: Returns classification.
      */
     public fromLyrics = async (req: Request<{}, {}, Music>, res: Response) => {
-        // var music:Music = req.body;
-        // var classification = await this.mlService.classifyFromText(music.lyrics)
-        // return res.send(classification).status(StatusCodes.ACCEPTED);
-        var res1 = await musicModel.find({track:"Jennifer"}).exec();
-        return res.send(res1);
+        var music:Music = req.body;
+        var classification = await this.mlService.classifyFromText(music.lyrics)
+        return res.send(classification).status(StatusCodes.ACCEPTED);
     }
 }

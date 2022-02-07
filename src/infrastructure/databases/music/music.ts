@@ -1,18 +1,18 @@
 import { model, Schema } from "mongoose";
 
-var music = new Schema({
-    track: {
+var musicSchema = new Schema({
+    title: {
         type: String,
         required: true
     },
-    seed: {
+    mood: {
         type: String,
         required: true
     },
-    Lyrics: {
+    lyrics: {
         type: String,
         required: true
     }
 });
 
-export const musicModel = model("music", music)
+export const musicModel = model("music", musicSchema)
