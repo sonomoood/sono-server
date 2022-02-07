@@ -31,7 +31,7 @@ export default class MusicController{
             musicQuery.title = ""
         }
         var escapedTitle = escapeRegex(musicQuery.title);
-        var musics = await musicModel.find({title: {$regex: escapedTitle }}, {title: 1}).exec()
+        var musics = await musicModel.find({title: {$regex: escapedTitle, $options: "i"}}, {title: 1}).exec()
         
         return res.send(musics);
     }
