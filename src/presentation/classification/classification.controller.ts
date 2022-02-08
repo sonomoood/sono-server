@@ -13,7 +13,7 @@ export default class ClassificationController{
 
     constructor(){
         var mlConfig : MlConfig = config.get("mlService");
-        this.mlService = new MlService(mlConfig);
+        this.mlService = new MlService();
     }
 
     /**
@@ -32,7 +32,7 @@ export default class ClassificationController{
      */
     public fromLyrics = async (req: Request<{}, {}, Music>, res: Response) => {
         var music:Music = req.body;
-        var classification = await this.mlService.classifyFromText(music.lyrics);
+        var classification = await this.mlService.classify(music.lyrics);
 
         var musicDocument = new musicModel();
         musicDocument.title = music.title;
