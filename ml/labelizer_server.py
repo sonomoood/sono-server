@@ -36,7 +36,7 @@ class ServerHandler(BaseHTTPRequestHandler):
         dico = dico_api.loadDico()
         themes = dico_api.computeThemeOccurences(text, dico)
 
-        if (sum(themes) == 0): tag='Unrecognized text content. Plase provide some known words.'
+        if (sum(themes) == 0): tag='Unrecognized text content. Please provide some known words.'
         else: tag = engine.get_label(dico_api.generateTrainSet(dico), themes)
 
         self._set_headers()

@@ -36,7 +36,7 @@ $ echo $(curl http://localhost:4000 -d 'some unrecognizable text' --silent)
 
 E) Tag lyrics:
 --------------
-If we wanted to tag a big text content using curl command, we would use a file containing that text.
+If we wanted to tag a long text content using curl command, we would use a file containing that text.
 ```bash
 For example send the file test_song1.txt
 $ echo $(curl http://localhost:4000 -d '@test_song1.txt' --silent)
