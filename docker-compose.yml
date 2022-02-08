@@ -25,11 +25,11 @@ services:
     ports:
       - "3000:3000"
     links:
-      - "mongo:mongodbhost"
+      - "mongodb:mongodbhost"
 
-  PythonML:
+  pythonml:
     image: python-machinelearning
-    container_name: pythonMl
+    container_name: pythonml
     build:
       context: .
       dockerfile: Dockerfile_PythonML
