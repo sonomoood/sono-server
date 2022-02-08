@@ -1,6 +1,6 @@
 {
     "dbConfig": {
-        "host": "localhost",
+        "host": "mongodbhost",
         "database": "sonomood",
         "port": 27017
     },
