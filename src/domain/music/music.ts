@@ -1,4 +1,6 @@
 export default interface Music {
     title: string,
-    lyrics: string
+    mood: string,
+    lyrics: string,
+    author: string
 }

@@ -5,6 +5,8 @@ import { TwitterApi } from 'twitter-api-v2';
 import { StatusCodes } from 'http-status-codes';
 import MlService from '@/infrastructure/ml/mlService';
 import MlConfig from '@/infrastructure/ml/mlConfig';
+import escapeRegex from '@/utils/escapeRegex';
+import { musicModel } from '@/infrastructure/databases/music/music';
 
 
 export default class RecommendationController{
@@ -28,7 +30,7 @@ export default class RecommendationController{
      *         type: string
      *     responses:
      *       200:
-     *         description: Returns 10 latest tweets.
+     *         description: Returns recommended musics.
      *       400:
      *         description: Error with the username
      */
@@ -66,6 +68,14 @@ export default class RecommendationController{
 
         logger.info("Tweets are :\n" + latestTweets + "\n----\nMood is : " + mood);
 
-        return res.send(mood).status(StatusCodes.ACCEPTED);
+        //Get recommended music in database
+        var escapedMood = escapeRegex(mood);
+        var musics = await musicModel.find({mood: {$regex: escapedMood, $options: "i"}}).exec()
+
+        var responseBody = {
+            mood: mood,
+            musics: musics
+        }
+        return res.send(responseBody).status(StatusCodes.ACCEPTED);
     }
 }

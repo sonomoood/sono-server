@@ -15,8 +15,12 @@
     "twitter": {
         "bearerToken": "SECRET : add it in local.json not in default.json or other filed tracked with Git"
     },
-    "mlService": {
+    "mlService_mock": {
         "baseUrl": "http://localhost:3001",
         "classifyTextUrl": "classify-text"
+    },
+    "mlService": {
+        "baseUrl": "http://13.38.65.157:4000",
+        "classifyTextUrl": "/"
     }
 }

@@ -1,12 +1,11 @@
 import { Request, Response } from 'express';
 import { logger } from '@utils/logger';
 import config from 'config';
-import { TwitterApi } from 'twitter-api-v2';
 import { StatusCodes } from 'http-status-codes';
 import MlService from '@/infrastructure/ml/mlService';
 import MlConfig from '@/infrastructure/ml/mlConfig';
 import Music from '@/domain/music/music';
-
+import { musicModel } from '@/infrastructure/databases/music/music';
 
 export default class ClassificationController{
 
@@ -33,7 +32,21 @@ export default class ClassificationController{
      */
     public fromLyrics = async (req: Request<{}, {}, Music>, res: Response) => {
         var music:Music = req.body;
-        var classification = await this.mlService.classifyFromText(music.lyrics)
+        var classification = await this.mlService.classifyFromText(music.lyrics);
+
+        var musicDocument = new musicModel();
+        musicDocument.title = music.title;
+        musicDocument.lyrics = music.lyrics; 
+        musicDocument.author = music.author;
+
+        if(classification == "Unrecognized text content. Plase provide some known words."){
+            musicDocument.mood = undefined;
+        }
+        else{
+            musicDocument.mood = classification;
+        }
+
+        musicModel.create(musicDocument);
         return res.send(classification).status(StatusCodes.ACCEPTED);
     }
 }

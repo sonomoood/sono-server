@@ -1,24 +1,31 @@
 version: '3.7'
 
 services:
-#  mongo:
-#    image: mvertes/alpine-mongo
-#    container_name: mongo
-#    ports:
-#      - '27017:27017'
-#
-#  backend:
-#    image: app-backend
-#    container_name: back
-#    depends_on:
-#      - mongo
-#    build:
-#      context: .
-#      dockerfile: Dockerfile_Back
-#    ports:
-#      - "3000:3000"
-#    links:
-#      - "mongo:mongodbhost"
+  mongodb:
+      container_name: mongodb
+      image: mongo:latest
+      ports:
+        - "27017:27017"
+
+  mongo_seed:
+      build: ./mongo_seed
+      depends_on:
+        - mongodb
+      profiles:
+        - seeds
+
+  backend:
+    image: app-backend
+    container_name: back
+    depends_on:
+      - mongo
+    build:
+      context: .
+      dockerfile: Dockerfile_Back
+    ports:
+      - "3000:3000"
+    links:
+      - "mongo:mongodbhost"
 
   PythonML:
     image: python-machinelearning

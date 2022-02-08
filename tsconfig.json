@@ -11,6 +11,8 @@
       "@presentation/*": ["presentation/*"],
       "@healthcheck/*": ["presentation/healthcheck/*"],
       "@recommendation/*": ["presentation/recommendation/*"],
+      "@classification/*": ["presentation/classification/*"],
+      "@music/*": ["presentation/music/*"],
       "@databases": ["/databases"],
       "@interfaces/*": ["interfaces/*"],
       "@routes/*": ["routes/*"],
