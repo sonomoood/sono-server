@@ -18,7 +18,7 @@ services:
     image: app-backend
     container_name: back
     depends_on:
-      - mongo
+      - mongodb
     build:
       context: .
       dockerfile: Dockerfile_Back
