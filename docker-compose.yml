@@ -1,8 +1,15 @@
 version: '3.7'
 
 services:
-  mongo:
-    image: mvertes/alpine-mongo
-    container_name: mongo
-    ports:
-      - '27017:27017'
+  mongodb:
+      container_name: mongodb
+      image: mongo:latest
+      ports:
+        - "27017:27017"
+
+  mongo_seed:
+      build: ./mongo_seed
+      depends_on:
+        - mongodb
+      profiles:
+        - seeds
