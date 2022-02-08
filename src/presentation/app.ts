@@ -13,7 +13,7 @@ import swaggerUi from 'swagger-ui-express';
 import { dbConnection } from '@infrastructure/databases';
 import { Routes } from '@interfaces/routes.interface';
 // import errorMiddleware from '@middlewares/error.middleware';
-import { logger, stream } from '../utils/logger';
+import { logger, stream } from '@utils/logger';
 
 class App {
   public app: express.Application;

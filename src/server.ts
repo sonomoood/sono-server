@@ -1,11 +1,13 @@
 import 'dotenv/config';
 import '@/index';
-import App from '@/presentation/app';
+// import App from '@/presentation/app';
 import HealthCheckRoute from '@healthcheck/healthcheck.route';
 import validateEnv from '@utils/validateEnv';
 import RecommendationRoute from '@recommendation/recommendation.route';
 import ClassificationRoute from './presentation/classification/classification.route';
 import MusicRoute from './presentation/music/music.route';
+import App from "@presentation/app";
+
 
 // validateEnv();
 

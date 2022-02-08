@@ -13,3 +13,26 @@ services:
         - mongodb
       profiles:
         - seeds
+
+  backend:
+    image: app-backend
+    container_name: back
+    depends_on:
+      - mongo
+    build:
+      context: .
+      dockerfile: Dockerfile_Back
+    ports:
+      - "3000:3000"
+    links:
+      - "mongodb:mongodbhost"
+
+  pythonml:
+    image: python-machinelearning
+    container_name: pythonml
+    build:
+      context: .
+      dockerfile: Dockerfile_PythonML
+    ports:
+      - "4000:4000"
+

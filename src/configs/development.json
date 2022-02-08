@@ -1,3 +1,17 @@
 {
-    "env": "development"
+    "env": "development",
+    "dbConfig": {
+        "host": "mongodbhost",
+        "database": "sonomood",
+        "port": 27017
+    },
+    "secretKey": "secretKey",
+    "log": {
+        "format": "dev",
+        "dir": "../../logs"
+    },
+    "cors": {
+        "origin": true,
+        "credentials": true
+    }
 }
