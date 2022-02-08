@@ -7,6 +7,7 @@ import MlService from '@/infrastructure/ml/mlService';
 import MlConfig from '@/infrastructure/ml/mlConfig';
 import escapeRegex from '@/utils/escapeRegex';
 import { musicModel } from '@/infrastructure/databases/music/music';
+import TwitterService from '@/infrastructure/twitter/twitterService';
 
 
 export default class RecommendationController{
@@ -42,28 +43,16 @@ export default class RecommendationController{
                 .send("Twitter username is missing");
         }
 
-        // Twitter authentication
-        const twitterClient = new TwitterApi(config.get("twitter.bearerToken"));
-        const roClient = twitterClient.readOnly;
+        var twitterService : TwitterService = new TwitterService();
+        var twitterSeviceResponse = await twitterService.getLatestMergedTweets(req.query.twitter_username.toString());
 
-        // Get user twitter ID
-        var twitterUsername = req.query.twitter_username.toString();
-        var userResponse = await roClient.v2.userByUsername(twitterUsername);
-        if(userResponse.errors){
+        if(twitterSeviceResponse.error){
             return res
             .status(StatusCodes.BAD_REQUEST)
-            .send(userResponse.errors[0].detail);
+            .send(twitterSeviceResponse.content);
         }
-        var userId = userResponse.data.id;
 
-        // Get user 10 latest tweet
-        var userTimeline = await roClient.v2.userTimeline(userId);
-        var latestTweets : string = "";
-
-        if(userTimeline.data.data){
-            userTimeline.data.data.forEach(tweet => latestTweets += " " + tweet.text);
-        }
-        
+        var latestTweets = twitterSeviceResponse.content;
         var mood = await this.mlService.classifyFromText(latestTweets);
 
         logger.info("Tweets are :\n" + latestTweets + "\n----\nMood is : " + mood);
