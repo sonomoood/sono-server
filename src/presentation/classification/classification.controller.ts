@@ -40,7 +40,7 @@ export default class ClassificationController{
         musicDocument.author = music.author;
 
         if(classification == "Unrecognized text content. Plase provide some known words."){
-            musicDocument.mood = null;
+            musicDocument.mood = undefined;
         }
         else{
             musicDocument.mood = classification;
